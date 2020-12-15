@@ -1,0 +1,45 @@
+@import "../../styles/_variables.less";
+@import "../../styles/_mixins.less";
+
+#menu-options {
+  width: 40vh;
+  height: auto;
+  .floating(0, unset, unset, 4vh, 10);
+  background: pink;
+  .menu-options-container {
+    width: 40vh;
+    background: mediumseagreen;
+    .menu-item {
+      text-align: left;
+      cursor: pointer;
+      .sub-menu {
+        display: none;
+        .sub-menu-container {
+          background: blue;
+          width: 40vh;
+          height: auto;
+          .display(flex, flex-end, unset);
+          ul {
+            background: yellow;
+            li {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      &:hover{
+        .sub-menu {
+          display: block;
+        }
+      }
+    }
+  }
+  
+}
+
+
+#menu-options {
+
+  
+}
