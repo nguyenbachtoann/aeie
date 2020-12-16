@@ -1,18 +1,14 @@
 import React from "react";
 import { MenuOptions } from "./MenuOptions";
-import {MenuTitle} from "./MenuTitle";
+import { MenuTitle } from "./MenuTitle";
+import { MenuActivities } from "./MenuActivities";
 function Menu() {
   return (
     <div id="menu">
       <div className="menu-container">
         <MenuOptions />
-
-        <MenuTitle/>
-
-        <span>dasdasd</span>
-
-        {/* App Tile*/}
-        {/* Activities*/}
+        <MenuTitle />
+        <MenuActivities />
       </div>
     </div>
   );

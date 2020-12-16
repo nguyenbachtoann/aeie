@@ -7,8 +7,14 @@
   position: fixed;
 }
 
-.display(@display, @justify, @align){
+.displayFlex(@display, @justify, @align){
     display: @display;
     justify-content: @justify;
     align-items: @align;
+}
+
+.text-size-weight-style(@fontSize, @fontWeight, @fontStyle) {
+  font-size: @fontSize;
+  font-weight: @fontWeight;
+  font-style: @fontStyle;
 }

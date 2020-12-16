@@ -5,7 +5,7 @@ function MenuTitle() {
   return (
       <div id="menu-title">
           <div className="menu-title-container">
-            <span>
+            <span className="text-title">
                 aeie studios
             </span>
           </div>

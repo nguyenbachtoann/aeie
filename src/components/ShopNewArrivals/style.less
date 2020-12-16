@@ -1,0 +1,100 @@
+@import "../../styles/_variables.less";
+@import "../../styles/_mixins.less";
+
+#shop-new-arrival {
+  height: 100%;
+  width: 100%;
+  .displayFlex(flex, center, flex-end);
+  .shop-new-arrival-container {
+    .width-height-100-perc;
+    .shop-new-arrival-container-row {
+      .width-height-100-perc;
+      .displayFlex(flex, center, flex-end);
+    }
+    .shop-arrival-item {
+      width: 27vh;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+      img:hover {
+          img {
+              opacity: 0.5;
+          }
+      }
+
+      .shop-item-container {
+        display: flex;
+        .width-height-100-perc;
+        .item-info {
+          display: flex;
+          margin-left: -10vh;
+          .width-height-100-perc;
+          .item-info-detail {
+            position: absolute;
+            &:nth-child(odd) {
+              height: 60%;
+              background: red;
+              .detail-name-wrapper {
+                height: 20vh;
+                flex-direction: row;
+                .displayFlex(flex, center, center);
+                .item-name-divider {
+                  width: 20vh;
+                  height: 2px;
+                  background: black;
+                }
+              }
+              .item-pricer {
+                height: 20vh;
+                background: green;
+                .item-name-divider {
+                  width: 20vh;
+                  height: 2px;
+                  background: black;
+                }
+              }
+            }
+            &:nth-child(even) {
+              height: 40%;
+              .detail-name-wrapper {
+                flex-direction: row;
+                .displayFlex(flex, flex-end, flex-end);
+                height: 10vh;
+                background: red;
+                .item-name-divider {
+                  width: 20vh;
+                  height: 2px;
+                  background: black;
+                }
+              }
+
+              .item-price {
+                height: 10vh;
+                background: green;
+                .item-name-divider {
+                  width: 20vh;
+                  height: 2px;
+                  background: black;
+                }
+              }
+            }
+            width: 40vh;
+            z-index: 10;
+            background: blue;
+
+            &:nth-child(odd) {
+              bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.width-height-100-perc {
+  height: 100%;
+  width: 100%;
+}
