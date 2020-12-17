@@ -6,95 +6,241 @@
   width: 100%;
   .displayFlex(flex, center, flex-end);
   .shop-new-arrival-container {
-    .width-height-100-perc;
+    .width-height-100-percent;
     .shop-new-arrival-container-row {
-      .width-height-100-perc;
+      width: 100%;
+      margin-top: 10vh;
       .displayFlex(flex, center, flex-end);
-    }
-    .shop-arrival-item {
-      width: 27vh;
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-      }
-      img:hover {
-          img {
-              opacity: 0.5;
-          }
-      }
 
-      .shop-item-container {
-        display: flex;
-        .width-height-100-perc;
-        .item-info {
+      .shop-arrival-item {
+        width: 27vh;
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: auto;
+        }
+
+        .shop-item-container {
           display: flex;
-          margin-left: -10vh;
-          .width-height-100-perc;
-          .item-info-detail {
-            position: absolute;
-            &:nth-child(odd) {
-              height: 60%;
-              background: red;
-              .detail-name-wrapper {
-                height: 20vh;
-                flex-direction: row;
-                .displayFlex(flex, center, center);
-                .item-name-divider {
-                  width: 20vh;
-                  height: 2px;
-                  background: black;
-                }
-              }
-              .item-pricer {
-                height: 20vh;
-                background: green;
-                .item-name-divider {
-                  width: 20vh;
-                  height: 2px;
-                  background: black;
-                }
+          .width-height-100-percent;
+          .item-info {
+            display: none;
+            margin-left: -10vh;
+            position: relative;
+            .item-info-detail-shirt {
+              .detail-info-floating(absolute,65vh, 10);
+              .top-right-bottom-left(25vh, unset, unset, unset);
+            }
+            .item-info-detail-skirt {
+              .detail-info-floating(absolute,50vh, 10);
+              .top-right-bottom-left(40vh, unset, unset, unset);
+            }
+
+            .divider-container {
+              height: 5vh;
+              .displayFlex(flex, center, center);
+              .divider {
+                width: 90%;
+                height: 2px;
+                background: black;
               }
             }
-            &:nth-child(even) {
-              height: 40%;
-              .detail-name-wrapper {
-                flex-direction: row;
-                .displayFlex(flex, flex-end, flex-end);
-                height: 10vh;
-                background: red;
-                .item-name-divider {
-                  width: 20vh;
-                  height: 2px;
-                  background: black;
+
+            .detail-container {
+              height: 5vh;
+              .detail-name {
+                .displayFlex(flex, flex-start, center);
+                .detail-name-text {
+                  margin-left: 0.5rem;
+                  .text-size-weight-style(1.4rem, 600, unset);
+                }
+                .detail-type-text {
+                  margin-left: 0.2rem;
+                  .text-size-weight-style(1.4rem, 400, italic);
                 }
               }
-
-              .item-price {
-                height: 10vh;
-                background: green;
-                .item-name-divider {
-                  width: 20vh;
-                  height: 2px;
-                  background: black;
+              .detail-price {
+                .displayFlex(flex, unset, center);
+                .detail-price-text {
+                  margin-left: 0.5rem;
+                  .text-size-weight-style(1.4rem, 300, unset);
                 }
               }
-            }
-            width: 40vh;
-            z-index: 10;
-            background: blue;
-
-            &:nth-child(odd) {
-              bottom: 0;
             }
           }
+        }
+        &:hover {
+          .shop-item-container {
+            .item-info {
+              display: block;
+            }
+          }
+        }
+      }
+      @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+        div:nth-of-type(4) {
+          .shop-arrival-item {
+            .shop-item-container {
+              .item-info {
+                .item-info-left(1.4rem,60%, 55vh, -55vh);
+              }
+            }
+          }
+        }
+      }
+
+      @media only screen and (min-width: 576px) and (max-width: 1024px) {
+        div:nth-of-type(even) {
+          .shop-arrival-item {
+            .shop-item-container {
+              .item-info {
+                .item-info-left(1.4rem,60%, 55vh, -55vh);
+              }
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: 575px) {
+        div:nth-of-type(n) {
+          .shop-arrival-item {
+            .shop-item-container {
+              .item-info {
+                .item-info-left(0.7rem, unset, 45vh,-30vh);
+              }
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 425px) {
+        .shop-arrival-item {
+          .shop-item-container {
+            .item-info {
+              .item-info-left(0.7rem, unset, 45vh,-30vh);
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 375px) {
+        .shop-arrival-item {
+          .shop-item-container {
+            .item-info {
+              .item-info-left(0.7rem, unset, 45vh, -10vh);
+            }
+          }
+        }
+      }
+    }
+    .shop-new-arrival-container-row {
+      .shop-arrival-item {
+        img {
+          visibility: hidden;
+        }
+      }
+    }
+
+    .shop-new-arrival-container-row > * {
+      .shop-arrival-item {
+        img {
+          visibility: visible;
+        }
+      }
+    }
+
+    .shop-new-arrival-container-row > * {
+      .shop-arrival-item {
+        img {
+          transition: opacity 150ms linear 100ms,
+            transform 150ms ease-in-out 100ms;
+        }
+      }
+    }
+
+    .shop-new-arrival-container-row:hover > * {
+      .shop-arrival-item {
+        img {
+          opacity: 0.2;
+          transform: scale(0.98);
+        }
+      }
+    }
+
+    .shop-new-arrival-container-row > *:hover {
+      .shop-arrival-item {
+        img {
+          opacity: 1;
+          transform: scale(1);
+          left: 20vh;
         }
       }
     }
   }
 }
 
-.width-height-100-perc {
-  height: 100%;
-  width: 100%;
+
+.item-info-left(@fontSize, @dividerWidth, @detailWidth, @left) {
+  left: @left;
+  .item-info-detail-shirt {
+    .detail-info-floating(absolute,@detailWidth, 50);
+    .top-right-bottom-left(25vh, unset, unset, unset);
+    .detail-row-container {
+      .displayFlex(flex, flex-end, center);
+      flex-direction: row-reverse;
+    }
+    .divider-container {
+      .displayFlex(flex, flex-start, center);
+      .divider {
+        width: @dividerWidth;
+        height: 2px;
+        background: black;
+      }
+    }
+  }
+  .item-info-detail-skirt {
+    .detail-info-floating(absolute,@detailWidth, 50);
+    .top-right-bottom-left(40vh, unset, unset, unset);
+    .detail-row-container {
+      flex-direction: row-reverse;
+    }
+    .divider-container {
+      .displayFlex(flex, flex-start, center);
+      .divider {
+        width: @dividerWidth;
+        height: 2px;
+        background: black;
+      }
+    }
+  }
+
+  .detail-container {
+    .detail-name {
+      .detail-name-text {
+        margin-right: 0.2rem;
+        .text-size-weight-style(@fontSize, 600, unset);
+      }
+      .detail-type-text {
+        margin-right: 0.5rem;
+        .text-size-weight-style(@fontSize, 400, italic);
+      }
+    }
+    .detail-price {
+      .displayFlex(flex, flex-center, center);
+      .detail-price-text {
+        margin-right: 0.5rem;
+        .text-size-weight-style(@fontSize, 400, unset);
+      }
+    }
+  }
+}
+
+.detail-info-floating(@position, @width, @zIndex) {
+  position: @position;
+  width: @width;
+  z-index: @zIndex;
+}
+.top-right-bottom-left(@top, @right, @bottom, @left) {
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
 }

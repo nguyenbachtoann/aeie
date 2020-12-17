@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { resource } from "../../constants";
-import { Button } from "antd";
 import "./style.less";
 import { commonFunc } from "../../services";
 

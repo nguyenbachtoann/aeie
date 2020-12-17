@@ -14,16 +14,18 @@ function ShowNewArrivals() {
     for (let i = 0; i < 4; i++) {
       itemArr.push({
         image: imgs[i],
-        prices: {
-          shirt: {
-            name: "abc",
+        prices: [
+          {
+            type: "shirt",
+            name: "this is name",
             price: "390",
           },
-          skirt: {
-            name: "xyz",
+          {
+            type: "skirt",
+            name: "this is name",
             price: "390",
           },
-        },
+        ],
       });
     }
     console.log(itemArr);
@@ -38,7 +40,15 @@ function ShowNewArrivals() {
       <div className="shop-new-arrival-container">
         <Row className="shop-new-arrival-container-row">
           {items.map((item, i) => (
-            <Col key={i} xs={24} sm={12} md={12} lg={12} xl={6}>
+            <Col
+              key={i}
+              xs={24}
+              sm={12}
+              md={12}
+              lg={12}
+              xl={6}
+              className="shop-new-arrival-container-col"
+            >
               <Row justify="space-around" align="bottom">
                 <Col>
                   <div>
