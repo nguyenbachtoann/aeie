@@ -1,9 +1,9 @@
-import React from "react";
-import "./style.less";
+import React from 'react';
+import './style.less';
 function Home() {
   return (
-    <div id="page-home">
-      <div className="page-home-container">
+    <div id='page-home'>
+      <div className='page-home-container'>
         <span>please chose "new arrivals" at shop menu</span>
       </div>
     </div>
@@ -11,3 +11,5 @@ function Home() {
 }
 
 export { Home };
+
+// test ssh
